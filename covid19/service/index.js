@@ -66,7 +66,7 @@ exports.covidPeru = (req, res) => {
         confirmed: 1
     }];
 
-    res.set('Access-Control-Allow-Origin', '*')
+    res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
 
     res.send(locations);
 }
