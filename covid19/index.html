@@ -1,1 +1,68 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Perú COVID-19</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <div id="floating-panel">
+        <div class="group">
+            <div class="subject">Situación al <span id="info">20 de marzo</span></div>
+            <div class="subject-2">Casos confirmados: <span id="info">463</span></div>
+            <div class="subject-2">Casos descartados: <span id="info">4035</span></div>
+            <div class="subject-2">Fuente: 
+                <span id="info">
+                    <a href="https://twitter.com/Minsa_Peru/status/1241080637622292482/photo/1">MINSA</a>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+    
+    <script>
+      const maxI = 50, rad = 24, opac = .6;
+      var map, heatmap;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: {lat: -10.151093, lng: -75.311132},
+          mapTypeId: 'roadmap'
+        });
+
+        const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidPeru';
+
+        fetch(url).then(function(response) {
+          response.json().then(function(result) {
+
+            let locations = [];
+
+            result.forEach(location => {
+
+              let confirmed = 10 * location.confirmed;
+              let i = 0;
+
+              while (i < confirmed) {
+                locations.push(new google.maps.LatLng(location.latitude, location.longitude));
+                i++;
+              }
+            });
+
+
+            heatmap = new google.maps.visualization.HeatmapLayer({
+              data: locations,
+              map: map,
+              maxIntensity: maxI,
+              radius: rad,
+              opacity: opac
+            });
+          });
+        });
+      }
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=initMap">
+    </script>
+  </body>
+</html>

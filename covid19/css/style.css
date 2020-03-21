@@ -1,0 +1,39 @@
+#map {
+    height: 100%;
+  }
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #floating-panel {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    left: 15%;
+    z-index: 5;
+    text-align: left;
+  }
+  .group {
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 5px;
+    line-height: 25px;
+    background-color: white;
+    font-family: 'Roboto','sans-serif';
+    font-size: small;
+  }
+
+  #info {
+    font-weight: 800;
+  }
+
+  #subject {
+    font-size: larger;
+  }
+
+  #subject-2 {
+    text-align: left;
+    font-size: small;
+  }
