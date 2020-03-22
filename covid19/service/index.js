@@ -3,12 +3,12 @@ exports.covidPeru = (req, res) => {
         region   : "lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 241
+        confirmed: 278
     },{
         region : "loreto",
         latitude : -3.74912,
         longitude: -73.25383, 
-        confirmed: 14
+        confirmed: 16
     },{
         region : "junin",
         latitude : -12.069156,
@@ -33,12 +33,12 @@ exports.covidPeru = (req, res) => {
         region : "arequipa",
         latitude : -16.3988900,
         longitude: -71.5350000, 
-        confirmed: 4
+        confirmed: 7
     },{
         region : "huanuco",
         latitude : -9.925791,
         longitude: -76.242772, 
-        confirmed: 2
+        confirmed: 4
     },{
         region : "la-libertad",
         latitude : -8.1159897,
@@ -48,7 +48,7 @@ exports.covidPeru = (req, res) => {
         region : "piura",
         latitude : -5.1944900,
         longitude: -80.6328200, 
-        confirmed: 18 
+        confirmed: 19 
     },{
         region : "cusco",
         latitude : -13.516667,
