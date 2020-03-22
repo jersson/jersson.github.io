@@ -14,3 +14,6 @@ Estoy usando [Google Cloud Functions](https://cloud.google.com/functions/docs/wr
 Si tienen algún comentario o sugerencia, pueden contactarme por medio de [la sección de issues](https://github.com/jersson/jersson.github.io/issues), twitter ([@jersson](https://twitter/jersson)) o el [formulario de contacto en mi blog](https://jersson.net/contact/).
 
 Un abrazo,<br/> JD
+
+
+Excelente, un abrazo! - a 1 metro :)
