@@ -38,7 +38,7 @@ exports.covidPeru = (req, res) => {
         region : "huanuco",
         latitude : -9.925791,
         longitude: -76.242772, 
-        confirmed: 4
+        confirmed: 2
     },{
         region : "la-libertad",
         latitude : -8.1159897,
