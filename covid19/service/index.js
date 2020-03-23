@@ -3,7 +3,7 @@ exports.covidPeru = (req, res) => {
         region   : "lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 278
+        confirmed: 307
     },{
         region : "loreto",
         latitude : -3.74912,
@@ -23,7 +23,7 @@ exports.covidPeru = (req, res) => {
         region : "callao",
         latitude : -12.0565901,
         longitude: -77.1181412, 
-        confirmed: 6
+        confirmed: 8
     },{
         region : "ancash",
         latitude : -9.1366700,
@@ -43,7 +43,7 @@ exports.covidPeru = (req, res) => {
         region : "la-libertad",
         latitude : -8.1159897,
         longitude: -79.0299835, 
-        confirmed: 5
+        confirmed: 4
     },{
         region : "piura",
         latitude : -5.1944900,
@@ -53,16 +53,21 @@ exports.covidPeru = (req, res) => {
         region : "cusco",
         latitude : -13.516667,
         longitude: -71.978771, 
-        confirmed: 4
+        confirmed: 6
     },{
         region : "ica",
         latitude : -13.71029,
         longitude: -76.2053833, 
-        confirmed: 1
+        confirmed: 2
     },{
         region : "madre-de-dios",
         latitude : -12.594215,
         longitude: -69.176401, 
+        confirmed: 1
+    },{
+        region : "san-martin",
+        latitude : -6.034608,
+        longitude: -76.974733, 
         confirmed: 1
     }];
 
