@@ -31,6 +31,7 @@ exports.covidPeru = (req, res) => {
         confirmed: 8
     },{
         region : "ancash",
+        title : "Ancash",
         latitude : -9.1366700,
         longitude: -77.7602800, 
         confirmed: 4
@@ -85,7 +86,6 @@ exports.covidPeru = (req, res) => {
     }];
 
     res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
-    // res.set('Access-Control-Allow-Origin', '*')
 
     res.send(locations);
 }
