@@ -36,7 +36,7 @@
     <div id="map"></div>
     
     <script>
-      function setUpMap() {
+      function initMap() {
         const maxI = 50, rad = 24, opac = .6;
         const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidPeru';
 
@@ -53,11 +53,29 @@
 
             result.forEach(location => {
 
-              let confirmed = 10 * location.confirmed;
+              let factor = 10 * location.confirmed;
               let i = 0;
 
-              while (i < confirmed) {
+              let image = './images/icons8-coronavirus-16.png';
+
+              while (i < factor) {
                 locations.push(new google.maps.LatLng(location.latitude, location.longitude));
+                
+                let contentString = `<b>${location.title}</b><br/>Confirmados: <b>${location.confirmed}</b>`;
+                let infowindow = new google.maps.InfoWindow({
+                  content: contentString
+                });
+
+                let marker = new google.maps.Marker({
+                  position: {lat: location.latitude, lng: location.longitude},
+                  map: map,
+                  icon: image
+                });
+
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
+
                 i++;
               }
             });
@@ -74,7 +92,7 @@
       }
 
     </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=setUpMap">
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=initMap">
     </script>
   </body>
 </html>
