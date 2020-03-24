@@ -20,8 +20,8 @@ html, body {
 @media screen and (max-width: 780px) {
   #floating-panel {
     display: flex;
-    position: absolute;
-    top: 50px;
+    position: relative;
+    top: 95%;
     left: 5px;
     z-index: 5;
     text-align: left;
