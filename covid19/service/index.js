@@ -13,7 +13,7 @@ exports.covidPeru = (req, res) => {
         confirmed: 16
     },{
         region : "junin",
-        title: "Junin",
+        title: "Junín",
         latitude : -12.069156,
         longitude: -75.208648, 
         confirmed: 10
