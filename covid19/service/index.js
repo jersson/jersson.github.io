@@ -4,7 +4,7 @@ exports.covidPeru = (req, res) => {
         title    : "Lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 307
+        confirmed: 322
     },{
         region : "loreto",
         title: "Loreto",
@@ -31,7 +31,7 @@ exports.covidPeru = (req, res) => {
         confirmed: 8
     },{
         region : "ancash",
-        title : "Ancash",
+        title : "Áncash",
         latitude : -9.1366700,
         longitude: -77.7602800, 
         confirmed: 4
@@ -40,7 +40,7 @@ exports.covidPeru = (req, res) => {
         title: "Arequipa",
         latitude : -16.3988900,
         longitude: -71.5350000, 
-        confirmed: 7
+        confirmed: 9
     },{
         region : "huanuco",
         title: "Huánuco",
@@ -52,7 +52,7 @@ exports.covidPeru = (req, res) => {
         title: "La Libertad",
         latitude : -8.1159897,
         longitude: -79.0299835, 
-        confirmed: 4
+        confirmed: 5
     },{
         region : "piura",
         title: "Piura",
@@ -82,7 +82,13 @@ exports.covidPeru = (req, res) => {
         title: "San Martín",
         latitude : -6.034608,
         longitude: -76.974733, 
-        confirmed: 1
+        confirmed: 1    
+    },{
+        region : "tumbes",
+        title: "Tumbes",
+        latitude : -3.570698,
+        longitude: -80.459641, 
+        confirmed: 3
     }];
 
     res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
