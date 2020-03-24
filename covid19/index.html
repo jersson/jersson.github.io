@@ -12,15 +12,17 @@
     </script>
 
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Perú COVID-19</title>
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div id="floating-panel">
         <div class="group">
-            <div class="subject">Situación al <span id="info">23 de marzo</span></div>
-            <div class="subject-2">Casos confirmados: <span id="info">395</span></div>
-            <div class="subject-2">Casos descartados: <span id="info">6269</span></div>
+            <div class="subject">Situación al <span class="info">23 de marzo</span></div>
+            <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;395</span></div>
+            <div class="subject-2">Casos descartados: <span class="info number">6269</span></div>
             <div class="subject-2">Fuente: 
                 <span id="info">
                     <a href="https://twitter.com/Minsa_Peru/status/1242146715588853761/photo/1">MINSA</a>
@@ -61,7 +63,7 @@
               while (i < factor) {
                 locations.push(new google.maps.LatLng(location.latitude, location.longitude));
                 
-                let contentString = `<b>${location.title}</b><br/>Confirmados: <b>${location.confirmed}</b>`;
+                let contentString = `<div class="subject-2"><b>${location.title}</b><br/>Confirmados: <b>${location.confirmed}</b></div>`;
                 let infowindow = new google.maps.InfoWindow({
                   content: contentString
                 });

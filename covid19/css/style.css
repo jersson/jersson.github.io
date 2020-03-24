@@ -1,39 +1,56 @@
 #map {
-    height: 100%;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+  height: 100%;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto','sans-serif';
+}
+
+#floating-panel {
+  display: flex;
+  position: absolute;
+  top: 5px;
+  left: 15%;
+  z-index: 5;
+  text-align: left;
+}
+
+@media screen and (max-width: 780px) {
   #floating-panel {
     display: flex;
     position: absolute;
-    top: 5px;
-    left: 15%;
+    top: 50px;
+    left: 5px;
     z-index: 5;
     text-align: left;
   }
-  .group {
-    border: 1px solid #999;
-    border-radius: 3px;
-    margin: 5px;
-    padding: 5px;
-    line-height: 25px;
-    background-color: white;
-    font-family: 'Roboto','sans-serif';
-    font-size: small;
-  }
+}
 
-  #info {
-    font-weight: 800;
-  }
 
-  #subject {
-    font-size: larger;
-  }
+.group {
+  border: 1px solid #999;
+  border-radius: 3px;
+  margin: 5px;
+  padding: 5px;
+  line-height: 25px;
+  background-color: white;
+}
 
-  #subject-2 {
-    text-align: left;
-    font-size: small;
-  }
+.info {
+  font-weight: 800;
+}
+
+.subject {
+  font-size: medium;
+}
+
+.subject-2 {
+  font-size: small;
+  text-align: left;
+}
+
+.number {
+  text-align: right;
+}
