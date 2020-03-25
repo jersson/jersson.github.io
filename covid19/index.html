@@ -64,7 +64,7 @@
               while (i < factor) {
                 locations.push(new google.maps.LatLng(location.latitude, location.longitude));
                 
-                let contentString = `<div class="subject-2"><b>${location.title}</b><br/>Confirmados: <b>${location.confirmed}</b></div>`;
+                let contentString = `<div class="subject-2"><b>${location.title}</b><br/>Confirmados: <b>${location.confirmed}(${location.change})</b></div>`;
                 let infowindow = new google.maps.InfoWindow({
                   content: contentString
                 });
