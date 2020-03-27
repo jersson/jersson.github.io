@@ -22,10 +22,10 @@
   <body>
     <div id="floating-panel">
       <div class="group">
-          <div class="subject">Situación al <span class="info">26 de marzo</span></div>
-          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;580 (100+)</span></div>
-          <div class="subject-2">Casos descartados: <span class="info number">8639 (1179+)</span></div>
-          <div class="subject-2">Fallecidos: <span class="info number">9 (=)</span></div>
+          <div class="subject">Situación al <span class="info">27 de marzo</span></div>
+          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;635 (55+)</span></div>
+          <div class="subject-2">Casos descartados: <span class="info number">9430 (791+)</span></div>
+          <div class="subject-2">Fallecidos: <span class="info number">1 (2+)</span></div>
           <div class="subject-2">Fuente: 
               <span id="info">
                   <a href="https://twitter.com/Minsa_Peru/status/1243231800924782592">MINSA</a>
@@ -131,34 +131,41 @@
       new Chart(lineChart1, {
               type: 'line',
               data: {
-                  labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
                   datasets: [{
-                      data: [263,318,363,395,416,480,580],
+                      // data: [263,318,363,395,416,480,580],
+                      data: [318,363,395,416,480,580, 635],
                       label: "Perú",
                       borderColor: "#866969",
                       fill: false
                   }, {
-                      data: [220,241,278,307,322,369,453],
+                      // data: [220,241,278,307,322,369,453],
+                      data: [241,278,307,322,369,453, 494],
                       label: "Lima",
                       borderColor: "#c45850",
                       fill: false
                   }, {
-                      data: [2,18,19,19,19,19,20],
+                      // data: [2,18,19,19,19,19,20],
+                      data: [18,19,19,19,19,20, 20],
                       label: "Piura",
                       borderColor: "#8e5ea2",
                       fill: false
                   }, {
-                      data: [12,14,16,16,16,18,18],
+                      // data: [12,14,16,16,16,18,18],
+                      data: [14,16,16,16,18,18,23],
                       label: "Loreto",
                       borderColor: "#3cba9f",
                       fill: false
                   }, {
-                      data: [3,4,7,7,9,10,15],
+                      // data: [3,4,7,7,9,10,15],
+                      data: [4,7,7,9,10,15,15],
                       label: "Arequipa",
                       borderColor: "#e8c3b9",
                       fill: false
                   }, {
-                      data: [5,6,6,8,8,10,15],
+                      // data: [5,6,6,8,8,10,15],
+                      data: [6,6,8,8,10,15,17],
                       label: "Callao",
                       borderColor: "#3e95cd",
                       fill: false
@@ -188,24 +195,29 @@
       new Chart(lineChart2, {
               type: 'line',
               data: {
-                  labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
                   datasets: [{
-                      data: [4069,5246,6184,6664,7013,8040,9219],
+                      // data: [4069,5246,6184,6664,7013,8040,9219],
+                      data: [5246,6184,6664,7013,8040,9219,10065],
                       label: "Evaluaciones",
                       borderColor: "#ffa500",
                       fill: false
                   }, {
-                      data: [4035,4928,5821,6269,6597,7560,8639],
+                      // data: [4035,4928,5821,6269,6597,7560,8639],
+                      data: [4928,5821,6269,6597,7560,8639, 9430],
                       label: "Descartados",
                       borderColor: "#00cc00",
                       fill: false
                   }, {
-                      data: [263,318,363,395,416,480,580],
+                      // data: [263,318,363,395,416,480,580],
+                      data: [318,363,395,416,480,580, 635],
                       label: "Confirmados",
                       borderColor: "#c45850",
                       fill: false
                   }, {
-                      data: [7,7,8,8,8,9,9],
+                      // data: [7,7,8,8,8,9,9],
+                      data: [7,8,8,8,9,9,11],
                       label: "Fallecimientos",
                       borderColor: "#000000",
                       fill: false

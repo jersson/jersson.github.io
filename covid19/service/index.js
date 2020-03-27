@@ -4,71 +4,71 @@ exports.covidPeru = (req, res) => {
         title    : "Lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 453,
-        change: "84+"
+        confirmed: 494,
+        change: "41+"
     },{
         region : "loreto",
         title: "Loreto",
         latitude : -3.74912,
         longitude: -73.25383, 
-        confirmed: 18, 
-        change: "="
+        confirmed: 23, 
+        change: "5+"
     },{
         region : "junin",
         title: "Junín",
         latitude : -12.069156,
         longitude: -75.208648, 
-        confirmed: 11,
-        change : "="
+        confirmed: 12,
+        change : "1+"
     },{
         region : "lambayeque",
         title: "Lambayeque",
         latitude : -6.7011099,
         longitude: -79.9061127, 
-        confirmed: 12,
-        change: "="
+        confirmed: 13,
+        change: "+"
     },{
         region : "callao",
         title: "Callao",
         latitude : -12.0565901,
         longitude: -77.1181412, 
-        confirmed: 15,
-        change: "5+"
+        confirmed: 17,
+        change: "2+"
     },{
         region : "ancash",
         title : "Áncash",
         latitude : -9.1366700,
         longitude: -77.7602800, 
         confirmed: 6,
-        change: "1+"
+        change: "="
     },{
         region : "arequipa",
         title: "Arequipa",
         latitude : -16.3988900,
         longitude: -71.5350000, 
         confirmed: 15,
-        change: "5+"
+        change: "="
     },{
         region : "huanuco",
         title: "Huánuco",
         latitude : -9.925791,
         longitude: -76.242772, 
-        confirmed: 2,
-        change: "="
+        confirmed: 4,
+        change: "2+"
     },{
         region : "la-libertad",
         title: "La Libertad",
         latitude : -8.1159897,
         longitude: -79.0299835, 
         confirmed: 9,
-        change: "3+"
+        change: "="
     },{
         region : "piura",
         title: "Piura",
         latitude : -5.1944900,
         longitude: -80.6328200, 
         confirmed: 20, 
-        change: "1+"
+        change: "="
     },{
         region : "cusco",
         title: "Cusco",
@@ -82,7 +82,7 @@ exports.covidPeru = (req, res) => {
         latitude : -13.71029,
         longitude: -76.2053833, 
         confirmed: 3,
-        change: "1+"
+        change: "="
     },{
         region : "madre-de-dios",
         title: "Madre de Dios",
@@ -102,8 +102,8 @@ exports.covidPeru = (req, res) => {
         title: "Tumbes",
         latitude : -3.570698,
         longitude: -80.459641, 
-        confirmed: 3,
-        change: "="
+        confirmed: 5,
+        change: "2+"
     },{
         region : "cajamarca",
         title: "Cajamarca",
@@ -111,6 +111,13 @@ exports.covidPeru = (req, res) => {
         longitude: -78.517542, 
         confirmed: 1,
         change: "="
+    },{
+        region : "pasco",
+        title: "Pasco",
+        latitude : -10.683354,
+        longitude: -76.256148, 
+        confirmed: 1,
+        change: "1+"
     }];
 
     res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
