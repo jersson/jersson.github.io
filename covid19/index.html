@@ -16,33 +16,64 @@
 
     <title>Perú COVID-19</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
   </head>
   <body>
     <div id="floating-panel">
-        <div class="group">
-            <div class="subject">Situación al <span class="info">26 de marzo</span></div>
-            <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;580 (100+)</span></div>
-            <div class="subject-2">Casos descartados: <span class="info number">8639 (1179+)</span></div>
-            <div class="subject-2">Fallecidos: <span class="info number">9 (=)</span></div>
-            <div class="subject-2">Fuente: 
-                <span id="info">
-                    <a href="https://twitter.com/Minsa_Peru/status/1243231800924782592">MINSA</a>
-                </span>
-            </div>
-            <div class="subject-2"> 
-                <span id="info">
-                    <a href="https://github.com/jersson/jersson.github.io/tree/master/covid19">Sobre este proyecto</a>
-                </span>
-            </div>            
-        </div>
+      <div class="group">
+          <div class="subject">Situación al <span class="info">26 de marzo</span></div>
+          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;580 (100+)</span></div>
+          <div class="subject-2">Casos descartados: <span class="info number">8639 (1179+)</span></div>
+          <div class="subject-2">Fallecidos: <span class="info number">9 (=)</span></div>
+          <div class="subject-2">Fuente: 
+              <span id="info">
+                  <a href="https://twitter.com/Minsa_Peru/status/1243231800924782592">MINSA</a>
+              </span>
+          </div>
+          <div class="subject-2"> 
+              <span id="info">
+                  <a href="https://github.com/jersson/jersson.github.io/tree/master/covid19">Sobre este proyecto</a>
+              </span>
+          </div>            
+      </div>
     </div>
-    <div id="map"></div>
-    
+    <div id="map" class="tabcontent"></div>
+    <div id="chart1" class="tabcontent">
+      <canvas id="lineChart1" width="600" height="600px" ></canvas>
+    </div>
+    <div id="chart2" class="tabcontent">
+      <canvas id="lineChart2" width="600" height="600px" ></canvas>
+    </div>
+    <div class="tab">
+      <button class="tablinks active" onclick="openTab(event, 'map')">Mapa</button>
+      <button class="tablinks" onclick="openTab(event, 'chart1')">Regiones (Top 5)</button>
+      <button class="tablinks" onclick="openTab(event, 'chart2')">Diagnósticos</button>
+    </div>
     <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        document.getElementById(tabName).style.display = "block";
+        evt.currentTarget.className += " active";
+
+        document.getElementById('floating-panel').style.display = document.getElementById('map').style.display;
+      }
+
       function initMap() {
         const maxI = 50, rad = 24, opac = .6;
         const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidPeru';
-
+        document.getElementById('map').style.display = 'block';
         let map = new google.maps.Map(document.getElementById('map'), {
           zoom: 6,
           center: {lat: -10.151093, lng: -75.311132},
@@ -93,6 +124,109 @@
           });
         });
       }
+    </script>
+
+    <script>
+     var lineChart1 = document.getElementById("lineChart1");
+      new Chart(lineChart1, {
+              type: 'line',
+              data: {
+                  labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  datasets: [{
+                      data: [263,318,363,395,416,480,580],
+                      label: "Perú",
+                      borderColor: "#866969",
+                      fill: false
+                  }, {
+                      data: [220,241,278,307,322,369,453],
+                      label: "Lima",
+                      borderColor: "#c45850",
+                      fill: false
+                  }, {
+                      data: [2,18,19,19,19,19,20],
+                      label: "Piura",
+                      borderColor: "#8e5ea2",
+                      fill: false
+                  }, {
+                      data: [12,14,16,16,16,18,18],
+                      label: "Loreto",
+                      borderColor: "#3cba9f",
+                      fill: false
+                  }, {
+                      data: [3,4,7,7,9,10,15],
+                      label: "Arequipa",
+                      borderColor: "#e8c3b9",
+                      fill: false
+                  }, {
+                      data: [5,6,6,8,8,10,15],
+                      label: "Callao",
+                      borderColor: "#3e95cd",
+                      fill: false
+                  }
+                  ]
+              },
+              options: {
+                  maintainAspectRatio: false,
+                  title: {
+                      display: true,
+                      position: 'top',
+                      fontSize: 14,
+                      text: 'Casos confirmados Perú + Top 5 regional, últimos 7 días'
+                  },
+                  legend: {
+                      position: "bottom",
+                      align: "start"
+                  }
+              }
+          });
+
+    </script>
+
+    <script>
+      var lineChart2 = document.getElementById("lineChart2");
+
+      new Chart(lineChart2, {
+              type: 'line',
+              data: {
+                  labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
+                  datasets: [{
+                      data: [4069,5246,6184,6664,7013,8040,9219],
+                      label: "Evaluaciones",
+                      borderColor: "#ffa500",
+                      fill: false
+                  }, {
+                      data: [4035,4928,5821,6269,6597,7560,8639],
+                      label: "Descartados",
+                      borderColor: "#00cc00",
+                      fill: false
+                  }, {
+                      data: [263,318,363,395,416,480,580],
+                      label: "Confirmados",
+                      borderColor: "#c45850",
+                      fill: false
+                  }, {
+                      data: [7,7,8,8,8,9,9],
+                      label: "Fallecimientos",
+                      borderColor: "#000000",
+                      fill: false
+                  }
+                  ]
+
+              },
+              options: {
+                  maintainAspectRatio: false,
+                  title: {
+                      display: true,
+                      position: 'top',
+                      fontSize: 14,
+                      text: 'Evaluaciones y resultados en Perú, últimos 7 días'
+                  },
+                  legend: {
+                      position: "bottom",
+                      align: "start"
+                  }
+              }
+          });
 
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=initMap">
