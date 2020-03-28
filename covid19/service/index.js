@@ -4,36 +4,36 @@ exports.covidPeru = (req, res) => {
         title    : "Lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 494,
-        change: "41+"
+        confirmed: 518,
+        change: "24+"
     },{
         region : "loreto",
         title: "Loreto",
         latitude : -3.74912,
         longitude: -73.25383, 
-        confirmed: 23, 
-        change: "5+"
+        confirmed: 27, 
+        change: "4+"
     },{
         region : "junin",
         title: "Junín",
         latitude : -12.069156,
         longitude: -75.208648, 
         confirmed: 12,
-        change : "1+"
+        change : "="
     },{
         region : "lambayeque",
         title: "Lambayeque",
         latitude : -6.7011099,
         longitude: -79.9061127, 
-        confirmed: 13,
-        change: "+"
+        confirmed: 15,
+        change: "+2"
     },{
         region : "callao",
         title: "Callao",
         latitude : -12.0565901,
         longitude: -77.1181412, 
-        confirmed: 17,
-        change: "2+"
+        confirmed: 18,
+        change: "1+"
     },{
         region : "ancash",
         title : "Áncash",
@@ -54,14 +54,14 @@ exports.covidPeru = (req, res) => {
         latitude : -9.925791,
         longitude: -76.242772, 
         confirmed: 4,
-        change: "2+"
+        change: "="
     },{
         region : "la-libertad",
         title: "La Libertad",
         latitude : -8.1159897,
         longitude: -79.0299835, 
-        confirmed: 9,
-        change: "="
+        confirmed: 10,
+        change: "1+"
     },{
         region : "piura",
         title: "Piura",
@@ -74,15 +74,15 @@ exports.covidPeru = (req, res) => {
         title: "Cusco",
         latitude : -13.516667,
         longitude: -71.978771, 
-        confirmed: 10,
-        change: "="
+        confirmed: 11,
+        change: "1+"
     },{
         region : "ica",
         title: "Ica",
         latitude : -13.71029,
         longitude: -76.2053833, 
-        confirmed: 3,
-        change: "="
+        confirmed: 4,
+        change: "1+"
     },{
         region : "madre-de-dios",
         title: "Madre de Dios",
@@ -95,15 +95,15 @@ exports.covidPeru = (req, res) => {
         title: "San Martín",
         latitude : -6.034608,
         longitude: -76.974733, 
-        confirmed: 1,
-        change: "="  
+        confirmed: 2,
+        change: "1+"  
     },{
         region : "tumbes",
         title: "Tumbes",
         latitude : -3.570698,
         longitude: -80.459641, 
-        confirmed: 5,
-        change: "2+"
+        confirmed: 6,
+        change: "1+"
     },{
         region : "cajamarca",
         title: "Cajamarca",

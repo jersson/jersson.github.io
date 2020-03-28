@@ -22,13 +22,13 @@
   <body>
     <div id="floating-panel">
       <div class="group">
-          <div class="subject">Situación al <span class="info">27 de marzo</span></div>
-          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;635 (55+)</span></div>
-          <div class="subject-2">Casos descartados: <span class="info number">9430 (791+)</span></div>
-          <div class="subject-2">Fallecidos: <span class="info number">11 (2+)</span></div>
+          <div class="subject">Situación al <span class="info">28 de marzo</span></div>
+          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;671 (36+)</span></div>
+          <div class="subject-2">Casos descartados: <span class="info number">10225 (795+)</span></div>
+          <div class="subject-2">Fallecidos: <span class="info number">16 (5+)</span></div>
           <div class="subject-2">Fuente: 
               <span id="info">
-                  <a href="https://twitter.com/Minsa_Peru/status/1243604762978705409/photo/1">MINSA</a>
+                  <a href="https://twitter.com/Minsa_Peru/status/1243956611653214209/photo/1">MINSA</a>
               </span>
           </div>
           <div class="subject-2"> 
@@ -132,40 +132,47 @@
               type: 'line',
               data: {
                   // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
-                  labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
+                  // labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
+                  labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
                   datasets: [{
                       // data: [263,318,363,395,416,480,580],
-                      data: [318,363,395,416,480,580, 635],
+                      // data: [318,363,395,416,480,580, 635],
+                      data: [363,395,416,480,580,635,671],
                       label: "Perú",
                       borderColor: "#866969",
                       fill: false
                   }, {
                       // data: [220,241,278,307,322,369,453],
-                      data: [241,278,307,322,369,453, 494],
+                      // data: [241,278,307,322,369,453, 494],
+                      data: [278,307,322,369,453,494,518],
                       label: "Lima",
                       borderColor: "#c45850",
                       fill: false
                   }, {
                       // data: [2,18,19,19,19,19,20],
-                      data: [18,19,19,19,19,20, 20],
+                      // data: [18,19,19,19,19,20, 20],
+                      data: [19,19,19,19,20,20,20],
                       label: "Piura",
                       borderColor: "#8e5ea2",
                       fill: false
                   }, {
                       // data: [12,14,16,16,16,18,18],
-                      data: [14,16,16,16,18,18,23],
+                      // data: [14,16,16,16,18,18,23],
+                      data: [16,16,16,18,18,23,27],
                       label: "Loreto",
                       borderColor: "#3cba9f",
                       fill: false
                   }, {
                       // data: [3,4,7,7,9,10,15],
-                      data: [4,7,7,9,10,15,15],
+                      // data: [4,7,7,9,10,15,15],
+                      data: [7,7,9,10,15,15,15],
                       label: "Arequipa",
                       borderColor: "#e8c3b9",
                       fill: false
                   }, {
                       // data: [5,6,6,8,8,10,15],
-                      data: [6,6,8,8,10,15,17],
+                      // data: [6,6,8,8,10,15,17],
+                      data: [6,8,8,10,15,17,18],
                       label: "Callao",
                       borderColor: "#3e95cd",
                       fill: false
@@ -196,28 +203,33 @@
               type: 'line',
               data: {
                   // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
-                  labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
+                  // labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
+                  labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
                   datasets: [{
                       // data: [4069,5246,6184,6664,7013,8040,9219],
-                      data: [5246,6184,6664,7013,8040,9219,10065],
+                      // data: [5246,6184,6664,7013,8040,9219,10065],
+                      data: [6184,6664,7013,8040,9219,10065,10896],
                       label: "Evaluaciones",
                       borderColor: "#ffa500",
                       fill: false
                   }, {
                       // data: [4035,4928,5821,6269,6597,7560,8639],
-                      data: [4928,5821,6269,6597,7560,8639, 9430],
+                      // data: [4928,5821,6269,6597,7560,8639, 9430],
+                      data: [5821,6269,6597,7560,8639,9430,10225],
                       label: "Descartados",
                       borderColor: "#00cc00",
                       fill: false
                   }, {
                       // data: [263,318,363,395,416,480,580],
-                      data: [318,363,395,416,480,580, 635],
+                      // data: [318,363,395,416,480,580, 635],
+                      data: [363,395,416,480,580,635,671],
                       label: "Confirmados",
                       borderColor: "#c45850",
                       fill: false
                   }, {
                       // data: [7,7,8,8,8,9,9],
-                      data: [7,8,8,8,9,9,11],
+                      // data: [7,8,8,8,9,9,11],
+                      data: [8,8,8,9,9,11,16],
                       label: "Fallecimientos",
                       borderColor: "#000000",
                       fill: false
