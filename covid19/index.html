@@ -22,13 +22,13 @@
   <body>
     <div id="floating-panel">
       <div class="group">
-          <div class="subject">Situación al <span class="info">28 de marzo</span></div>
-          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;671 (36+)</span></div>
-          <div class="subject-2">Casos descartados: <span class="info number">10225 (795+)</span></div>
-          <div class="subject-2">Fallecidos: <span class="info number">16 (5+)</span></div>
+          <div class="subject">Situación al <span class="info">29 de marzo</span></div>
+          <div class="subject-2">Casos confirmados: <span class="info number">&nbsp;852 (181+)</span></div>
+          <div class="subject-2">Casos descartados: <span class="info number">11817 (1592+)</span></div>
+          <div class="subject-2">Fallecidos: <span class="info number">18 (2+)</span></div>
           <div class="subject-2">Fuente: 
               <span id="info">
-                  <a href="https://twitter.com/Minsa_Peru/status/1243956611653214209/photo/1">MINSA</a>
+                  <a href="https://twitter.com/Minsa_Peru/status/1244306452669480963">MINSA</a>
               </span>
           </div>
           <div class="subject-2"> 
@@ -133,46 +133,53 @@
               data: {
                   // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
                   // labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
-                  labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
+                  // labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
+                  labels: ["23-03", "24-03", "25-03", "26-03", "27-03", "28-03", "29-03"],
                   datasets: [{
                       // data: [263,318,363,395,416,480,580],
                       // data: [318,363,395,416,480,580, 635],
-                      data: [363,395,416,480,580,635,671],
+                      // data: [363,395,416,480,580,635,671],
+                      data: [395,416,480,580,635,671,852],
                       label: "Perú",
                       borderColor: "#866969",
                       fill: false
                   }, {
                       // data: [220,241,278,307,322,369,453],
                       // data: [241,278,307,322,369,453, 494],
-                      data: [278,307,322,369,453,494,518],
+                      // data: [278,307,322,369,453,494,518],
+                      data: [307,322,369,453,494,518,639],
                       label: "Lima",
                       borderColor: "#c45850",
                       fill: false
                   }, {
                       // data: [2,18,19,19,19,19,20],
                       // data: [18,19,19,19,19,20, 20],
-                      data: [19,19,19,19,20,20,20],
+                      // data: [19,19,19,19,20,20,20],
+                      data: [19,19,19,20,20,20,21],
                       label: "Piura",
                       borderColor: "#8e5ea2",
                       fill: false
                   }, {
                       // data: [12,14,16,16,16,18,18],
                       // data: [14,16,16,16,18,18,23],
-                      data: [16,16,16,18,18,23,27],
+                      // data: [16,16,16,18,18,23,27],
+                      data: [16,16,18,18,23,27,52],
                       label: "Loreto",
                       borderColor: "#3cba9f",
                       fill: false
                   }, {
-                      // data: [3,4,7,7,9,10,15],
-                      // data: [4,7,7,9,10,15,15],
-                      data: [7,7,9,10,15,15,15],
-                      label: "Arequipa",
+                      // data: [3,4,7,7,9,10,15], Aqp
+                      // data: [4,7,7,9,10,15,15], Aqp
+                      // data: [7,7,9,10,15,15,15], Aqp
+                      data: [8,8,12,12,13,15,22],
+                      label: "Lambayeque",
                       borderColor: "#e8c3b9",
                       fill: false
                   }, {
                       // data: [5,6,6,8,8,10,15],
                       // data: [6,6,8,8,10,15,17],
-                      data: [6,8,8,10,15,17,18],
+                      // data: [6,8,8,10,15,17,18],
+                      data: [8,8,10,15,17,18,29],
                       label: "Callao",
                       borderColor: "#3e95cd",
                       fill: false
@@ -204,32 +211,37 @@
               data: {
                   // labels: ["20-03", "21-03", "22-03", "23-03", "24-03", "25-03", "26-03"],
                   // labels: ["21-03", "22-03", "23-03", "24-03", "25-03", "26-03", "27-03"],
-                  labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
+                  // labels: ["22-03", "23-03", "24-03", "25-03", "26-03", "27-03", "28-03"],
+                  labels: ["23-03", "24-03", "25-03", "26-03", "27-03", "28-03", "29-03"],
                   datasets: [{
                       // data: [4069,5246,6184,6664,7013,8040,9219],
                       // data: [5246,6184,6664,7013,8040,9219,10065],
-                      data: [6184,6664,7013,8040,9219,10065,10896],
+                      // data: [6184,6664,7013,8040,9219,10065,10896],
+                      data: [6664,7013,8040,9219,10065,10896,12669],
                       label: "Evaluaciones",
                       borderColor: "#ffa500",
                       fill: false
                   }, {
                       // data: [4035,4928,5821,6269,6597,7560,8639],
                       // data: [4928,5821,6269,6597,7560,8639, 9430],
-                      data: [5821,6269,6597,7560,8639,9430,10225],
+                      // data: [5821,6269,6597,7560,8639,9430,10225],
+                      data: [6269,6597,7560,8639,9430,10225,11817],
                       label: "Descartados",
                       borderColor: "#00cc00",
                       fill: false
                   }, {
                       // data: [263,318,363,395,416,480,580],
                       // data: [318,363,395,416,480,580, 635],
-                      data: [363,395,416,480,580,635,671],
+                      // data: [363,395,416,480,580,635,671],
+                      data: [395,416,480,580,635,671,852],
                       label: "Confirmados",
                       borderColor: "#c45850",
                       fill: false
                   }, {
                       // data: [7,7,8,8,8,9,9],
                       // data: [7,8,8,8,9,9,11],
-                      data: [8,8,8,9,9,11,16],
+                      // data: [8,8,8,9,9,11,16],
+                      data: [8,8,9,9,11,16,18],
                       label: "Fallecimientos",
                       borderColor: "#000000",
                       fill: false
