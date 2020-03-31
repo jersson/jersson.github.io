@@ -49,9 +49,12 @@
       <button class="tablinks active" onclick="openTab(event, 'map')" title="Casos Perú en Mapa de calor"><i class="fas fa-map-marked-alt fa-2x"></i></button>
       <button class="tablinks" onclick="openTab(event, 'chart1')" title="Regiones (Top 5)"><i class="fas fa-chart-line fa-2x"></i></button>
       <button class="tablinks" onclick="openTab(event, 'chart2')" title="Diagnósticos"><i class="fas fa-head-side-mask fa-2x"></i></button>
-      <button class="tablinks" onclick="window.open('https:/github.com/jersson/jersson.github.io/tree/master/covid19', '_blank')" title="Más sobre este proyecto"><i class="fab fa-github fa-2x"></i></button>
+      <button class="tablinks" onclick="openGitHub()" title="Más sobre este proyecto"><i class="fab fa-github fa-2x"></i></button>
     </div>
     <script>
+      function openGitHub() {
+        window.open("https://github.com/jersson/jersson.github.io/tree/master/covid19", "_blank");
+      }
       function openTab(evt, tabName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
