@@ -56,7 +56,7 @@ function renderCaseTrends(chart) {
                     // data: [8,8,9,9,11,16,18],
                     // data: [8,9,9,11,16,18,24],
                     // data: [9,9,11,16,18,24,30],
-                    data: [9,11,16,18,24,30,41],
+                    data: [9,11,16,18,24,30,38],
                     label: 'Fallecimientos',
                     borderColor: '#000000',
                     fill: false
