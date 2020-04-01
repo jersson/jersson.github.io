@@ -31,7 +31,7 @@ Estoy usando [Google Cloud Functions](https://cloud.google.com/functions/docs/wr
 ## Fuentes de información
 La información es actualizada diariamente usando los reportes del [MINSA](https://www.gob.pe/minsa/) 
 
-## Código fuente
+# Código fuente
 Pueden encontrarlo en este [repositorio](./covid19)
 
 # Información de contacto
