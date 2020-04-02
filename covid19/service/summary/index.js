@@ -1,15 +1,15 @@
 exports.covidSummary = (req, res) =>{
     let summary = {
             show: true,
-            title : 'Situación al 1 de abril',
+            title : 'Situación al 2 de abril',
             cases: [
-                {alias: 'Confirmados', reported: 1323, delta:258},
-                {alias: 'Descartados', reported: 14264, delta:866},
-                {alias: 'Recuperados', reported: 447, delta:53},
-                {alias: 'Fallecidos', reported: 47, delta:17},
+                {alias: 'Confirmados', reported: 1414, delta:91},
+                {alias: 'Descartados', reported: 15104, delta:840},
+                {alias: 'Recuperados', reported: 537, delta:90},
+                {alias: 'Fallecidos', reported: 55, delta:8},
             ],
             source: {
-                link: 'https://twitter.com/Minsa_Peru/status/1245410804335288326',
+                link: 'https://twitter.com/Minsa_Peru/status/1245776225207009292',
                 alias: 'MINSA'                
             }
         };
