@@ -1,6 +1,6 @@
 function initMap() {
   const maxI = 50, rad = 24, opac = .6;
-  const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidPeru';
+  const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidLocations';
   document.getElementById('map').style.display = 'block';
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 6,
@@ -15,7 +15,7 @@ function initMap() {
 
       result.forEach(location => {
 
-        let factor = 10 * location.confirmed;
+        let factor = 3 * location.confirmed;
         let i = 0;
 
         let image = './images/icons8-coronavirus-16.png';

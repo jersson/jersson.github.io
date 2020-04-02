@@ -20,22 +20,10 @@
     <script src="https://kit.fontawesome.com/409d32f46b.js" crossorigin="anonymous"></script>
     <script src="./js/tools.js"></script>
     <script src="./js/map.js"></script>
+    <script src="./js/summary.js"></script>
   </head>
   <body>
-    <div id="floating-panel">
-      <div class="group">
-          <div class="subject-2 info">Situación al 1 de abril:</div>
-          <div class="subject-2">Confirmados: <span class="info number">1,323 (258+)</span></div>
-          <div class="subject-2">Descartados: <span class="info number">14,264 (866+)</span></div>
-          <div class="subject-2">Recuperados: <span class="info number">447 (53+)</span></div>
-          <div class="subject-2">Fallecidos: <span class="info number">38 (8+)</span></div>
-          <div class="subject-2">Fuente: 
-              <span id="info">
-                  <a href="https://twitter.com/Minsa_Peru/status/1245410804335288326">MINSA</a>
-              </span>
-          </div>
-      </div>
-    </div>
+    <div id="floating-panel"></div>
     <div id="map" class="tabcontent"></div>
     <div id="chart1" class="tabcontent">
       <canvas id="lineChart1" width="600" height="500px" ></canvas>
@@ -54,7 +42,7 @@
       <button class="tablinks" onclick="openGitHub()" title="Más sobre este proyecto"><i class="fab fa-github fa-2x"></i></button>
     </div>
     <script>
-
+      renderSummary();
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=initMap">
     </script>
