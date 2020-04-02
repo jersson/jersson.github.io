@@ -1,81 +1,26 @@
 function renderCaseTrends(chart) {
-    var lineChart2 = document.getElementById(chart);
-    new Chart(lineChart2, {
-            type: 'line',
-            data: {
-                // labels: ['20-03', '21-03', '22-03', '23-03', '24-03', '25-03', '26-03'],
-                // labels: ['21-03', '22-03', '23-03', '24-03', '25-03', '26-03', '27-03'],
-                // labels: ['22-03', '23-03', '24-03', '25-03', '26-03', '27-03', '28-03'],
-                // labels: ['23-03', '24-03', '25-03', '26-03', '27-03', '28-03', '29-03'],
-                // labels: ['24-03', '25-03', '26-03', '27-03', '28-03', '29-03', '30-03'],
-                // labels: ['25-03', '26-03', '27-03', '28-03', '29-03', '30-03','31-03'],
-                labels: ['26-03', '27-03', '28-03', '29-03', '30-03','31-03','01-04'],
-                datasets: [{
-                    // data: [4069,5246,6184,6664,7013,8040,9219],
-                    // data: [5246,6184,6664,7013,8040,9219,10065],
-                    // data: [6184,6664,7013,8040,9219,10065,10896],
-                    // data: [6664,7013,8040,9219,10065,10896,12669],
-                    // data: [7013,8040,9219,10065,10896,12669,13452],
-                    // data: [8040,9219,10065,10896,12669,13452,14463],
-                    data: [9219,10065,10896,12669,13452,14463,15587],
-                    label: 'Evaluaciones',
-                    borderColor: '#ffa500',
-                    fill: false
-                }, {
-                    // data: [4035,4928,5821,6269,6597,7560,8639],
-                    // data: [4928,5821,6269,6597,7560,8639, 9430],
-                    // data: [5821,6269,6597,7560,8639,9430,10225],
-                    // data: [6269,6597,7560,8639,9430,10225,11817],
-                    // data: [6597,7560,8639,9430,10225,11817,12502],
-                    // data: [7560,8639,9430,10225,11817,12502,13398],
-                    data: [8639,9430,10225,11817,12502,13398,14264],
-                    label: 'Descartados',
-                    borderColor: '#00cc00',
-                    fill: false
-                  }, {
-                    // data: [263,318,363,395,416,480,580],
-                    // data: [318,363,395,416,480,580, 635],
-                    // data: [363,395,416,480,580,635,671],
-                    // data: [395,416,480,580,635,671,852],
-                    // data: [416,480,580,635,671,852,950],
-                    // data: [480,580,635,671,852,950,1065],
-                    data: [580,635,671,852,950,1065,1323],
-                    label: 'Confirmados',
-                    borderColor: '#c45850',
-                    fill: false                    
-                  }, {
-                    // data: [4,14,16,16,16,53,394],
-                    data: [14,16,16,16,53,394,447],
-                    label: 'Recuperados',
-                    borderColor: '#B266FF',
-                    fill: false
-                }, {
-                    // data: [7,7,8,8,8,9,9],
-                    // data: [7,8,8,8,9,9,11],
-                    // data: [8,8,8,9,9,11,16],
-                    // data: [8,8,9,9,11,16,18],
-                    // data: [8,9,9,11,16,18,24],
-                    // data: [9,9,11,16,18,24,30],
-                    data: [9,11,16,18,24,30,38],
-                    label: 'Fallecimientos',
-                    borderColor: '#000000',
-                    fill: false
-                }
-                ]
-
-            },
-            options: {
-                maintainAspectRatio: false,
-                title: {
-                    display: true,
-                    position: 'top',
-                    fontSize: 14,
-                    text: 'Evaluaciones y resultados en Perú, últimos 7 días'
-                },
-                legend: {
-                    position: 'bottom',
-                    align: 'start'
-                }
-            }
-        });
+    const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidCaseTrends';
+    
+    fetch(url).then((res) => {
+        res.json().then(result => {
+            var lineChart2 = document.getElementById(chart);
+            new Chart(lineChart2, {
+                    type: 'line',
+                    data: result,
+                    options: {
+                        maintainAspectRatio: false,
+                        title: {
+                            display: true,
+                            position: 'top',
+                            fontSize: 14,
+                            text: 'Evaluaciones y resultados en Perú, últimos 7 días'
+                        },
+                        legend: {
+                            position: 'bottom',
+                            align: 'start'
+                        }
+                    }
+                });
+        })
+    })
 }
