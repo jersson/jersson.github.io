@@ -13,7 +13,7 @@ function renderCaseTrends(chart) {
                             display: true,
                             position: 'top',
                             fontSize: 14,
-                            text: 'Evaluaciones y resultados en Perú, últimos 7 días'
+                            text: 'Pruebas y resultados en Perú, últimos 7 días'
                         },
                         legend: {
                             position: 'bottom',
