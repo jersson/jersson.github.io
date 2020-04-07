@@ -7,14 +7,16 @@ exports.covidSummary = (req, res) =>{
                 {alias: 'Confirmados', reported: '2,561', delta:'280+'},
                 {alias: 'Recuperados', reported: '997', delta:'8+'},
                 {alias: 'Fallecidos', reported: '92', delta:'9+'},
+                {alias: 'Mortalidad', reported: '3.59%', delta:'3.64%'},
             ],
             source: {
-                link: '', 
-                alias: 'Presidente del Perú'
+                link: 'https://www.gob.pe/coronavirus', 
+                alias: 'MINSA'
             }
         };
 
-    res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
+    let origin_allowed = process.env.ORIGIN_ALLOWED;
+    res.set('Access-Control-Allow-Origin', origin_allowed);
 
     res.send(summary);
 }

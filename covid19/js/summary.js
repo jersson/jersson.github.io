@@ -17,7 +17,7 @@ function renderSummary() {
                     htmlSummary += `<div class="subject-2">${caseInfo.alias}: <span class="info number">${caseInfo.reported} (${caseInfo.delta})</span></div>`;
                 });
     
-                htmlSummary += '<div class="subject-2">Fuente:';
+                htmlSummary += '<div class="subject-2">Fuente: ';
                 htmlSummary += `<span id="info"><a href="${result.source.link}">${result.source.alias}</a></span>`;
                 htmlSummary += '</div>';
     
