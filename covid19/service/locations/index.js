@@ -155,7 +155,8 @@ exports.covidLocations = (req, res) => {
         change: "="
     }];
 
-    res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
+    let origin_allowed = process.env.ORIGIN_ALLOWED;
+    res.set('Access-Control-Allow-Origin', origin_allowed);
 
     res.send(locations);
 }

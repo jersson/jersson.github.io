@@ -100,7 +100,8 @@ exports.covidCaseTrends = (req, res) => {
 
     };
 
-    res.set('Access-Control-Allow-Origin', 'https://jersson.github.io')
+    let origin_allowed = process.env.ORIGIN_ALLOWED;
+    res.set('Access-Control-Allow-Origin', origin_allowed);
 
     res.send(caseTrends);
 }
