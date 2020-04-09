@@ -1,13 +1,13 @@
 exports.covidSummary = (req, res) =>{
     let summary = {
             show: true,
-            title : 'Situación al 7 de abril',
+            title : 'Situación al 8 de abril',
             cases: [
-                {alias: 'Pruebas realizadas', reported: '21,555', delta:'1,141+'},
-                {alias: 'Confirmados', reported: '2,954', delta:'393+'},
-                {alias: 'Recuperados', reported: '1231', delta:'234+'},
-                {alias: 'Fallecidos', reported: '107', delta:'15+'},
-                {alias: 'Mortalidad', reported: '%3.62', delta:'3.59%'},
+                {alias: 'Pruebas realizadas', reported: '39,599', delta:'18,044+'},
+                {alias: 'Confirmados', reported: '4,342', delta:'1,388+'},
+                {alias: 'Recuperados', reported: '1,333', delta:'102+'},
+                {alias: 'Fallecidos', reported: '121', delta:'14+'},
+                {alias: 'Mortalidad', reported: '%2.79', delta:'3.62%'},
             ],
             source: {
                 link: 'https://www.gob.pe/coronavirus', 
