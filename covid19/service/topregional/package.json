@@ -1,0 +1,14 @@
+{
+  "name": "topregional",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local": "functions-framework --target=covidTopRegionalTrends"
+  },
+  "author": "Jersson Dongo",
+  "license": "MIT",
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.5.1"
+  }
+}

@@ -169,8 +169,8 @@ exports.covidLocations = (req, res) => {
         change: "11+"
     }];
 
-    let origin_allowed = process.env.ORIGIN_ALLOWED;
-    res.set('Access-Control-Allow-Origin', origin_allowed);
+    let origin_allowed = process.env.ORIGIN_ALLOWED || '*';
 
+    res.set('Access-Control-Allow-Origin', origin_allowed);
     res.send(locations);
 }

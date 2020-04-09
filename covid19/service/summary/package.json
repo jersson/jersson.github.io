@@ -1,0 +1,15 @@
+{
+  "name": "summary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "local": "functions-framework --target=covidSummary"
+  },
+  "author": "Jersson Dongo",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^1.5.1"
+  }
+}
