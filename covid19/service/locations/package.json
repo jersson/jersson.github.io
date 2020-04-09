@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "local": "functions-framework --target=covidLocations"
+    "local": "functions-framework --target=covidLocations",
+    "deploy": "./deploy.sh"
   },
   "author": "Jersson Dongo",
   "license": "MIT",
