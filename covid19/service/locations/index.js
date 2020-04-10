@@ -4,99 +4,99 @@ exports.covidLocations = (req, res) => {
         title    : "Lima",
         latitude : -12.0464,
         longitude: -77.0428, 
-        confirmed: 3016,
-        change: "916+"
+        confirmed: 4210,
+        change: "1194+"
     },{
         region : "loreto",
         title: "Loreto",
         latitude : -3.74912,
         longitude: -73.25383, 
-        confirmed: 290, 
-        change: "84+"
+        confirmed: 315, 
+        change: "25+"
     },{
         region : "junin",
         title: "Junín",
         latitude : -12.069156,
         longitude: -75.208648, 
-        confirmed: 42,
+        confirmed: 56,
         change : "14+"
     },{
         region : "lambayeque",
         title: "Lambayeque",
         latitude : -6.7011099,
         longitude: -79.9061127, 
-        confirmed: 246,
-        change: "78+"
+        confirmed: 302,
+        change: "56+"
     },{
         region : "callao",
         title: "Callao",
         latitude : -12.0565901,
         longitude: -77.1181412, 
-        confirmed: 320,
-        change: "159+"
+        confirmed: 465,
+        change: "145+"
     },{
         region : "ancash",
         title : "Áncash",
         latitude : -9.1366700,
         longitude: -77.7602800, 
-        confirmed: 50,
-        change: "14+"
+        confirmed: 67,
+        change: "17+"
     },{
         region : "arequipa",
         title: "Arequipa",
         latitude : -16.3988900,
         longitude: -71.5350000, 
-        confirmed: 74,
-        change: "8+"
+        confirmed: 83,
+        change: "9+"
     },{
         region : "huanuco",
         title: "Huánuco",
         latitude : -9.925791,
         longitude: -76.242772, 
-        confirmed: 7,
-        change: "1+"
+        confirmed: 9,
+        change: "2+"
     },{
         region : "la-libertad",
         title: "La Libertad",
         latitude : -8.1159897,
         longitude: -79.0299835, 
-        confirmed: 82,
-        change: "24+"
+        confirmed: 101,
+        change: "19+"
     },{
         region : "piura",
         title: "Piura",
         latitude : -5.1944900,
         longitude: -80.6328200, 
-        confirmed: 41, 
-        change: "6+"
+        confirmed: 68, 
+        change: "27+"
     },{
         region : "cusco",
         title: "Cusco",
         latitude : -13.516667,
         longitude: -71.978771, 
-        confirmed: 54,
-        change: "="
+        confirmed: 57,
+        change: "3+"
     },{
         region : "ica",
         title: "Ica",
         latitude : -13.71029,
         longitude: -76.2053833, 
-        confirmed: 28,
-        change: "4+"
+        confirmed: 37,
+        change: "9+"
     },{
         region : "madre-de-dios",
         title: "Madre de Dios",
         latitude : -12.594215,
         longitude: -69.176401, 
-        confirmed: 2,
-        change: "="
+        confirmed: 3,
+        change: "1+"
     },{
         region : "san-martin",
         title: "San Martín",
         latitude : -6.034608,
         longitude: -76.974733, 
-        confirmed: 11,
-        change: "3+"  
+        confirmed: 18,
+        change: "7+"  
     },{
         region : "tumbes",
         title: "Tumbes",
@@ -109,15 +109,15 @@ exports.covidLocations = (req, res) => {
         title: "Cajamarca",
         latitude : -7.157181,
         longitude: -78.517542, 
-        confirmed: 10,
-        change: "4+"
+        confirmed: 11,
+        change: "1+"
     },{
         region : "pasco",
         title: "Pasco",
         latitude : -10.683354,
         longitude: -76.256148, 
-        confirmed: 5,
-        change: "="
+        confirmed: 8,
+        change: "3+"
     },{
         region : "tacna",
         title: "Tacna",
@@ -130,8 +130,8 @@ exports.covidLocations = (req, res) => {
         title: "Ayacucho",
         latitude : -13.160333,
         longitude: -74.225743, 
-        confirmed: 5,
-        change: "="
+        confirmed: 9,
+        change: "4+"
     },{
         region : "huancavelica",
         title: "Huancavelica",
@@ -144,15 +144,15 @@ exports.covidLocations = (req, res) => {
         title: "Apurimac",
         latitude : -13.637320,
         longitude: -72.878821, 
-        confirmed: 1,
-        change: "="
+        confirmed: 3,
+        change: "2+"
     },{
         region : "moquegua",
         title: "Moquegua",
         latitude : -17.193771,
         longitude: -70.934572, 
         confirmed: 3,
-        change: "2+"
+        change: "="
     },{
         region : "puno",
         title: "Puno",
@@ -165,8 +165,15 @@ exports.covidLocations = (req, res) => {
         title: "Amazonas",
         latitude : -6.22933,
         longitude: -77.872405, 
-        confirmed: 11,
-        change: "11+"
+        confirmed: 16,
+        change: "5+"
+    },{
+        region : "ucayali",
+        title: "Ucayali",
+        latitude : -8.382998,
+        longitude: -74.532188, 
+        confirmed: 12,
+        change: "12+"
     }];
 
     let origin_allowed = process.env.ORIGIN_ALLOWED || '*';
