@@ -82,7 +82,7 @@ exports.covidLocations = (req, res) => {
         latitude : -13.71029,
         longitude: -76.2053833, 
         confirmed: 37,
-        change: "9+"
+        change: "3+"
     },{
         region : "madre-de-dios",
         title: "Madre de Dios",

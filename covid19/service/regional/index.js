@@ -268,8 +268,25 @@ let regionalTrends = {
         }]
     };
 
+    // let selectedRegions = {
+    //     labels: regionalTrends.labels,
+    //     datasets: regionalTrends.datasets.filter(region => 
+    //         (region.label == 'Ica') || 
+    //         (region.label == 'Áncash') || 
+    //         (region.label == 'Junín'))
+    // }
+
+    let selectedRegions = {
+        labels: regionalTrends.labels,
+        datasets: regionalTrends.datasets.filter(region => 
+            (region.label == 'Arequipa') || 
+            (region.label == 'La Libertad') || 
+            (region.label == 'Piura'))
+    }
+
     let origin_allowed = process.env.ORIGIN_ALLOWED || '*';
 
     res.set('Access-Control-Allow-Origin', origin_allowed);
-    res.send(regionalTrends);
+    // res.send(regionalTrends);
+    res.send(selectedRegions);
 }
