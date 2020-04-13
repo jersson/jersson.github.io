@@ -1,15 +1,15 @@
-//Generated file at Fri Apr 10 2020 20:58:26 GMT-0500 (-05)
+//Generated file at Sun Apr 12 2020 20:38:47 GMT-0500 (-05)
 const Summary = {
 data : () => {
 return {
 show:true
-,title:'Situación al 9 abril'
+,title:'Situación al 12 de abril'
 ,cases: [
-{alias:'Pruebas realizadas', reported: '48,465', delta:'8,866+'}
-,{alias:'Confirmados', reported: '5,256', delta:'914+'}
-,{alias:'Recuperados', reported: '1,438', delta:'105+'}
-,{alias:'Fallecidos', reported: '138', delta:'17+'}
-,{alias:'Mortalidad', reported: '2.63%', delta:'2.79%'}
+{alias:'Pruebas realizadas', reported: '76,506', delta:'10,795+'}
+,{alias:'Confirmados', reported: '7,519', delta:'671+'}
+,{alias:'Recuperados', reported: '1,798', delta:'59+'}
+,{alias:'Fallecidos', reported: '193', delta:'12+'}
+,{alias:'Mortalidad', reported: '2.57%', delta:'2.64%'}
 ]
 ,source: {
 link: 'https://www.gob.pe/coronavirus'

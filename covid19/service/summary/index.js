@@ -1,4 +1,4 @@
-const Summary = require('./summary');
+const Summary = require('./data/summary');
 exports.covidSummary = (req, res) =>{
 
     let summary = Summary.data();
