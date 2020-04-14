@@ -30,7 +30,7 @@ Estoy usando [Github Pages](https://pages.github.com/) para publicar el código 
 ## Back End
 Los servicios que estoy usando los publico en [Google Cloud Functions](https://cloud.google.com/functions/docs/writing/http)
 
-La data utilizada por los servicios las genero utilizando un **generador de código** que explico [más adelante](./covid19/readme.md).
+La data utilizada por los servicios las genero utilizando un **generador de código** que explico [más adelante](./covid19).
 
 ## Fuentes de información
 La información es actualizada diariamente usando los reportes del [MINSA](https://www.gob.pe/minsa/) 
