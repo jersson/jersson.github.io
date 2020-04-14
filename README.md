@@ -28,7 +28,9 @@ El gráfico muestra la relación y tendencia de evaluaciones, casos confirmados,
 Estoy usando [Github Pages](https://pages.github.com/) para publicar el código HTML y el mapa de calor de [Google Maps](https://developers.google.com/maps/documentation/javascript/examples/layer-heatmap) para mostrar la información de casos COVID-19 confirmados.
 
 ## Back End
-Estoy usando [Google Cloud Functions](https://cloud.google.com/functions/docs/writing/http)
+Los servicios que estoy usando los publico en [Google Cloud Functions](https://cloud.google.com/functions/docs/writing/http)
+
+La data utilizada por los servicios las genero utilizando un **generador de código** que explico [más adelante](./covid19/readme.md).
 
 ## Fuentes de información
 La información es actualizada diariamente usando los reportes del [MINSA](https://www.gob.pe/minsa/) 
