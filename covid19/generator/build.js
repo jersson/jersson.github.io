@@ -8,6 +8,8 @@ const folderName = 'data';
 const outputFolderName = 'dist';
 
 const generalConfiguration = require('./data/configuration');
+const config = generalConfiguration.data();
+const daysToAnalyse = config.daysToAnalyse;
 
 function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
@@ -75,8 +77,8 @@ function generateSummaryFile(summaryCsvFile) {
     });
 }
 
-function generateLocationsText(daysToAnalyse) {
-    const config = generalConfiguration.data();
+function generateLocationsText() {
+    //const config = generalConfiguration.data();
     let daysTitle = config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse);
 
     let locations = {
@@ -121,8 +123,8 @@ function generateLocationsText(daysToAnalyse) {
 }
 
 function generateLocationsFile() {
-    const daysToAnalyse = 7; 
-    let locationsText = generateLocationsText(daysToAnalyse);
+    //const daysToAnalyse = 7; 
+    let locationsText = generateLocationsText();
 
     fs.writeFile(path.resolve(__dirname, outputFolderName, 'locations.js'),locationsText, (err) => {
         if (err)
@@ -131,8 +133,8 @@ function generateLocationsFile() {
 
 }
 
-function generateTopRegionalText(daysToAnalyse) {
-    const config = generalConfiguration.data();
+function generateTopRegionalText() {
+    //const config = generalConfiguration.data();
     let daysTitle = config.days.slice(config.days.length - daysToAnalyse, config.days.length);
 
     let topRegional = {
@@ -169,8 +171,8 @@ function generateTopRegionalText(daysToAnalyse) {
 }
 
 function generateTopRegionalFile() {
-    const daysToAnalyse = 7
-    const topRegionalText = generateTopRegionalText(daysToAnalyse);
+    //const daysToAnalyse = 7
+    const topRegionalText = generateTopRegionalText();
 
     fs.writeFile(path.resolve(__dirname, outputFolderName, 'topregional.js'),topRegionalText, (err) => {
         if (err)
@@ -179,7 +181,7 @@ function generateTopRegionalFile() {
 }
 
 function getDiscardedCases(region) {
-    let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
+    //let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
     let tested = region.cases.tested.data.slice(region.cases.tested.data.length - daysToAnalyse, region.cases.tested.data.length);
     let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, region.cases.confirmed.data.length);
     let discardedCases = [];
@@ -193,7 +195,7 @@ function getDiscardedCases(region) {
 }
 
 function getTreatmentCases(region) {
-    let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
+    //let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
     let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, region.cases.confirmed.data.length);
     let recovered = region.cases.recovered.data.slice(region.cases.recovered.data.length - daysToAnalyse, region.cases.recovered.data.length);
     let deceased = region.cases.deceased.data.slice(region.cases.deceased.data.length - daysToAnalyse, region.cases.deceased.data.length);
@@ -208,8 +210,8 @@ function getTreatmentCases(region) {
 }
 
 function getCasesDataSet(region) {
-    const config = generalConfiguration.data();
-    const daysToAnalyse = config.daysToAnalyse;
+    // const config = generalConfiguration.data();
+    // const daysToAnalyse = config.daysToAnalyse;
 
     let dataset = [];
 
@@ -264,8 +266,8 @@ function getCasesDataSet(region) {
     return dataset;
 }
 
-function generateCasesText(daysToAnalyse) {
-    const config = generalConfiguration.data();
+function generateCasesText() {
+    // const config = generalConfiguration.data();
     let daysTitle = config.days.slice(config.days.length - daysToAnalyse, config.days.length);
 
     let cases = {
@@ -291,8 +293,8 @@ function generateCasesText(daysToAnalyse) {
 }
 
 function generateCasesFile() {
-    const daysToAnalyse = 7
-    const casesText = generateCasesText(daysToAnalyse);
+    // const daysToAnalyse = 7
+    const casesText = generateCasesText();
 
     fs.writeFile(path.resolve(__dirname, outputFolderName, 'cases.js'),casesText, (err) => {
         if (err)
@@ -304,7 +306,9 @@ const fileFlag = argv.file;
 
 switch (fileFlag) {
     case 'summary':
+        console.log('🤖Generating summary file...');
         generateSummaryFile(summaryCsvFile)
+        console.log('🤖Summary file has been generated 😎');
         break;
 
     case 'locations':
@@ -326,8 +330,12 @@ switch (fileFlag) {
         break;
     
     case 'all':
-        console.log('generate all files');
+        console.log('🤖Generating all files...');
         generateSummaryFile(summaryCsvFile)
+        generateLocationsFile();
+        generateTopRegionalFile();
+        generateCasesFile();
+        console.log('🤖All files had been generated 😎');
         break;
 
     default:

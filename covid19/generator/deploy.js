@@ -55,8 +55,12 @@ switch (fileFlag) {
         break;
     
     case 'all':
-        console.log('(TODO)deploying all files...');
-        //deploySummaryFile(summaryFile)
+        console.log('🤖Deploying all files...');
+        deploySummaryFile(summaryFile)
+        deployLocationsFile();
+        deployTopRegionalFile()
+        deployCasesFile()
+        console.log('🤖All files had been deployed 😎');    
         break;
 
     default:
