@@ -133,12 +133,12 @@ function generateLocationsFile() {
 
 function generateTopRegionalText(daysToAnalyse) {
     const config = generalConfiguration.data();
-    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse);
+    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, config.days.length);
 
     let topRegional = {
         data: () => {
             return {
-                labels: config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse), 
+                labels: daysTitle, 
                 datasets: 
                     config.regions.sort((r1,r2) => {
                         return r2.confirmed[r2.confirmed.length - 1] - r1.confirmed[r1.confirmed.length - 1]
@@ -146,7 +146,7 @@ function generateTopRegionalText(daysToAnalyse) {
                     .map(r => {
                         let item = {};
                         item.label = r.title;
-                        item.data = r.confirmed.slice(r.confirmed.length - daysToAnalyse, daysToAnalyse);
+                        item.data = r.confirmed.slice(r.confirmed.length - daysToAnalyse, r.confirmed.length);
                         item.borderColor = r.borderColor;
                         item.fill = r.fill;
                         return item;
@@ -180,8 +180,8 @@ function generateTopRegionalFile() {
 
 function getDiscardedCases(region) {
     let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
-    let tested = region.cases.tested.data.slice(region.cases.tested.data.length - daysToAnalyse, daysToAnalyse);
-    let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, daysToAnalyse);
+    let tested = region.cases.tested.data.slice(region.cases.tested.data.length - daysToAnalyse, region.cases.tested.data.length);
+    let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, region.cases.confirmed.data.length);
     let discardedCases = [];
 
     for (let index = 0; index < daysToAnalyse; index++) {
@@ -194,9 +194,9 @@ function getDiscardedCases(region) {
 
 function getTreatmentCases(region) {
     let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
-    let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, daysToAnalyse);
-    let recovered = region.cases.recovered.data.slice(region.cases.recovered.data.length - daysToAnalyse, daysToAnalyse);
-    let deceased = region.cases.deceased.data.slice(region.cases.deceased.data.length - daysToAnalyse, daysToAnalyse);
+    let confirmed = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, region.cases.confirmed.data.length);
+    let recovered = region.cases.recovered.data.slice(region.cases.recovered.data.length - daysToAnalyse, region.cases.recovered.data.length);
+    let deceased = region.cases.deceased.data.slice(region.cases.deceased.data.length - daysToAnalyse, region.cases.deceased.data.length);
     let treatmentCases = [];
 
     for (let index = 0; index < daysToAnalyse; index++) {
@@ -208,11 +208,14 @@ function getTreatmentCases(region) {
 }
 
 function getCasesDataSet(region) {
+    const config = generalConfiguration.data();
+    const daysToAnalyse = config.daysToAnalyse;
+
     let dataset = [];
 
     let tested = {};
     tested.label = region.cases.tested.title;
-    tested.data = region.cases.tested.data;
+    tested.data = region.cases.tested.data.slice(region.cases.tested.data.length - daysToAnalyse, region.cases.tested.data.length);
     tested.borderColor = region.cases.tested.borderColor;
     tested.fill = region.cases.tested.fill;
 
@@ -228,7 +231,7 @@ function getCasesDataSet(region) {
 
     let confirmed = {};
     confirmed.label = region.cases.confirmed.title;
-    confirmed.data = region.cases.confirmed.data;
+    confirmed.data = region.cases.confirmed.data.slice(region.cases.confirmed.data.length - daysToAnalyse, region.cases.confirmed.data.length);
     confirmed.borderColor = region.cases.confirmed.borderColor;
     confirmed.fill = region.cases.confirmed.fill;
 
@@ -236,7 +239,7 @@ function getCasesDataSet(region) {
 
     let recovered = {};
     recovered.label = region.cases.recovered.title;
-    recovered.data = region.cases.recovered.data;
+    recovered.data = region.cases.recovered.data.slice(region.cases.recovered.data.length - daysToAnalyse, region.cases.recovered.data.length);
     recovered.borderColor = region.cases.recovered.borderColor;
     recovered.fill = region.cases.recovered.fill;
 
@@ -252,7 +255,7 @@ function getCasesDataSet(region) {
 
     let deceased = {};
     deceased.label = region.cases.deceased.title;
-    deceased.data = region.cases.deceased.data;
+    deceased.data = region.cases.deceased.data.slice(region.cases.deceased.data.length - daysToAnalyse, region.cases.deceased.data.length);
     deceased.borderColor = region.cases.deceased.borderColor;
     deceased.fill = region.cases.deceased.fill;
 
@@ -263,12 +266,12 @@ function getCasesDataSet(region) {
 
 function generateCasesText(daysToAnalyse) {
     const config = generalConfiguration.data();
-    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse);
+    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, config.days.length);
 
     let cases = {
         data: () => {
             return {
-                labels: config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse), 
+                labels: daysTitle, 
                 datasets: getCasesDataSet(config.regions.filter(r => r.region == 'peru')[0])
             }
         }
