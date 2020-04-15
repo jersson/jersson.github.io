@@ -1,5 +1,7 @@
+'use strict'
 class Builder{
     constructor(){
+        this.config = require('../data/configuration').data();
         this.fs = require('fs');
         this.path = require('path');
     };

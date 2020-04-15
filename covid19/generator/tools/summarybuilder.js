@@ -1,3 +1,4 @@
+'use strict'
 const Builder = require('./builder');
 
 class SummaryBuilder extends Builder{

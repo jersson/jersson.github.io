@@ -17,65 +17,10 @@ function formatNumber(num) {
 }
 
 const SummaryBuilder = require('./tools/summarybuilder');
+const LocationsBuilder = require('./tools/locationsbuilder');
+
 const summaryBuilder = new SummaryBuilder();
-
-
-
-function generateLocationsText() {
-    //const config = generalConfiguration.data();
-    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, daysToAnalyse);
-
-    let locations = {
-        data: () => {
-            return {
-                regions: config.regions.filter(r=>r.region != 'peru').map(r => {
-                    let item = {};
-                    let delta = r.confirmed[r.confirmed.length - 1] - r.confirmed[r.confirmed.length - 2];
-                    let change = ''
-
-                    if (delta > 0){
-                        change = `${delta}+`;
-                    }else if (delta == 0) {
-                        change = '=';
-                    } else {
-                        change = `${-1 * delta}-`;
-                    }
-
-                    item.region = r.region;
-                    item.title = r.title;
-                    item.latitude = r.latitude;
-                    item.longitude = r.longitude;
-                    item.confirmed = formatNumber(r.confirmed[r.confirmed.length - 1]);
-                    item.change = change;
-                    return item;
-                })
-            }
-        }
-    };
-
-    let locationsText = `//Generated file at ${new Date()}\n`;
-    locationsText += 'const Locations = {\n';
-    locationsText += 'data : () => {\n';
-    locationsText += 'return ';
-    locationsText += JSON.stringify(locations.data().regions);
-    locationsText += '\n';
-    locationsText += '}\n';
-    locationsText += '}\n';
-    locationsText += 'module.exports = Locations;';    
-
-    return locationsText;
-}
-
-function generateLocationsFile() {
-    //const daysToAnalyse = 7; 
-    let locationsText = generateLocationsText();
-
-    fs.writeFile(path.resolve(__dirname, outputFolderName, 'locations.js'),locationsText, (err) => {
-        if (err)
-            console.log(err);
-    });
-
-}
+const locationsBuilder = new LocationsBuilder();
 
 function generateTopRegionalText() {
     //const config = generalConfiguration.data();
@@ -257,7 +202,7 @@ switch (fileFlag) {
 
     case 'locations':
         console.log('🤖Generating locations file...');
-        generateLocationsFile();
+        locationsBuilder.generateLocationsFile();
         console.log('🤖Locations file has been generated 😎');
         break;
     
