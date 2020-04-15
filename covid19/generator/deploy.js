@@ -1,65 +1,46 @@
 'use strict'
-const fs = require('fs');
-const path = require('path');
+
 const argv = require('yargs').argv
-
-const summaryFile = 'summary.js';
-const folderName = 'data';
-const outputFolderName = 'dist';
-
-function deploySummaryFile(summaryFile) {
-    fs.copyFileSync(path.resolve(__dirname,'./dist/summary.js'), '../service/summary/data/summary.js');
-}
-
-function deployLocationsFile() {
-    fs.copyFileSync(path.resolve(__dirname,'./dist/locations.js'), '../service/locations/data/locations.js');
-}
-
-function deployTopRegionalFile() {
-    fs.copyFileSync(path.resolve(__dirname,'./dist/topregional.js'), '../service/topregional/data/topregional.js');
-}
-
-function deployCasesFile() {
-    fs.copyFileSync(path.resolve(__dirname,'./dist/cases.js'), '../service/cases/data/cases.js');
-}
+const Deployer = require('./tools/deployer');
 
 const fileFlag = argv.file;
 const generateFlag = argv.generate;
+const deployer = new Deployer();
 
 switch (fileFlag) {
     case 'summary':
         if (generateFlag) {
-            console.log('🤖Generating summary file...');
+            console.log('🤖(TODO)Generating summary file...');
         }
-        console.log('🤖Deploying summary file...');
-        deploySummaryFile(summaryFile)
+        console.log('🤖Deploying summary file...');        
+        deployer.deploySummaryFile();
         console.log('🤖Summary file has been deployed 😎');
         break;
 
     case 'locations':
         console.log('🤖Deploying locations file...');
-        deployLocationsFile();
+        deployer.deployLocationsFile();
         console.log('🤖Locations file has been deployed 😎');    
         break;
     
     case 'topregional':
         console.log('🤖Deploying top-regional file...');
-        deployTopRegionalFile()
+        deployer.deployTopRegionalFile()
         console.log('🤖Top-regional file has been deployed 😎');    
         break;
 
     case 'cases':
         console.log('🤖Deploying cases file...');
-        deployCasesFile()
+        deployer.deployCasesFile()
         console.log('🤖Cases file has been deployed 😎');    
         break;
     
     case 'all':
         console.log('🤖Deploying all files...');
-        deploySummaryFile(summaryFile)
-        deployLocationsFile();
-        deployTopRegionalFile()
-        deployCasesFile()
+        deployer.deploySummaryFile()
+        deployer.deployLocationsFile();
+        deployer.deployTopRegionalFile()
+        deployer.deployCasesFile()
         console.log('🤖All files had been deployed 😎');    
         break;
 
@@ -67,4 +48,3 @@ switch (fileFlag) {
         console.log('missing argument');
         break;
 }
-
