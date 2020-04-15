@@ -18,56 +18,11 @@ function formatNumber(num) {
 
 const SummaryBuilder = require('./tools/summarybuilder');
 const LocationsBuilder = require('./tools/locationsbuilder');
+const TopRegionalBuilder = require('./tools/topregionalbuilder');
 
 const summaryBuilder = new SummaryBuilder();
 const locationsBuilder = new LocationsBuilder();
-
-function generateTopRegionalText() {
-    //const config = generalConfiguration.data();
-    let daysTitle = config.days.slice(config.days.length - daysToAnalyse, config.days.length);
-
-    let topRegional = {
-        data: () => {
-            return {
-                labels: daysTitle, 
-                datasets: 
-                    config.regions.sort((r1,r2) => {
-                        return r2.confirmed[r2.confirmed.length - 1] - r1.confirmed[r1.confirmed.length - 1]
-                    }).slice(0,6)
-                    .map(r => {
-                        let item = {};
-                        item.label = r.title;
-                        item.data = r.confirmed.slice(r.confirmed.length - daysToAnalyse, r.confirmed.length);
-                        item.borderColor = r.borderColor;
-                        item.fill = r.fill;
-                        return item;
-                    })
-            }
-        }
-    };
-
-    let topRegionalText = `//Generated file at ${new Date()}\n`;
-    topRegionalText += 'const TopRegional = {\n';
-    topRegionalText += 'data : () => {\n';
-    topRegionalText += 'return ';
-    topRegionalText += JSON.stringify(topRegional.data());
-    topRegionalText += '\n';
-    topRegionalText += '}\n';
-    topRegionalText += '}\n';
-    topRegionalText += 'module.exports = TopRegional;';    
-
-    return topRegionalText;   
-}
-
-function generateTopRegionalFile() {
-    //const daysToAnalyse = 7
-    const topRegionalText = generateTopRegionalText();
-
-    fs.writeFile(path.resolve(__dirname, outputFolderName, 'topregional.js'),topRegionalText, (err) => {
-        if (err)
-            console.log(err);
-    });
-}
+const topRegionalBuilder = new TopRegionalBuilder();
 
 function getDiscardedCases(region) {
     //let daysToAnalyse = generalConfiguration.data().daysToAnalyse;
@@ -208,7 +163,7 @@ switch (fileFlag) {
     
     case 'topregional':
         console.log('🤖Generating top-regional file...');
-        generateTopRegionalFile();
+        topRegionalBuilder.generateTopRegionalFile();
         console.log('🤖Top-regional file has been generated 😎');
         break;
 
