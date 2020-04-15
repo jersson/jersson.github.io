@@ -46,7 +46,8 @@ class SummaryBuilder extends Builder{
     
     }
 
-    generateSummaryFile(summaryCsvFile) {
+    generateSummaryFile() {
+        const summaryCsvFile = 'summary.csv';
         this.fs.readFile(this.path.resolve(__dirname, '../data/', summaryCsvFile), 'utf8', (err, file) => {
             if (err){
                 console.log(err);

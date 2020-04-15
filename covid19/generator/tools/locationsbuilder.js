@@ -2,10 +2,7 @@
 const Builder = require('./builder');
 
 class LocationsBuilder extends Builder{
-    generateLocationsText() {
-        // const daysToAnalyse = this.config.daysToAnalyse;
-        //let daysTitle = this.config.days.slice(this.config.days.length - daysToAnalyse, daysToAnalyse);
-    
+    generateLocationsText() {    
         let locations = {
             data: () => {
                 return {

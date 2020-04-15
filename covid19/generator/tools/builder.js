@@ -1,4 +1,5 @@
 'use strict'
+
 class Builder{
     constructor(){
         this.config = require('../data/configuration').data();
