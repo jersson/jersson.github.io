@@ -71,6 +71,10 @@ Por ejemplo, si queremos actualizar los datos del servicio de [Pruebas realizada
 ```
 node build.js --file cases
 ```
+(opcional)
+```
+npm run build -- --file cases
+```
 3. Si todo es correcto, encontrarás un mensaje como este:
 ```
 🤖Generating cases file...
@@ -80,6 +84,10 @@ node build.js --file cases
 5. Proceder con el despliegue correspondiente
 ```
 node deploy.js --file cases
+```
+(opcional)
+```
+npm run deploy -- --file cases
 ```
 6. Si todo es correcto, encontrarás un mensaje como este:
 ```
