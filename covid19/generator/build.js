@@ -11,71 +11,15 @@ const generalConfiguration = require('./data/configuration');
 const config = generalConfiguration.data();
 const daysToAnalyse = config.daysToAnalyse;
 
+//TODO: remove after refactor all generators
 function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
 }
 
-function generateSummaryText(lastLine, previousLine) {
-    const showSummary = lastLine[0];
-    const title = lastLine[1];
-    const cases = lastLine[2];
-    const confirmed = lastLine[3];
-    const recovered = lastLine[4];
-    const deceased = lastLine[5];
-    const link = lastLine[6];
-    const alias = lastLine[7];
+const SummaryBuilder = require('./tools/summarybuilder');
+const summaryBuilder = new SummaryBuilder();
 
-    const lastDayCases = cases - previousLine[2];
-    const previousDayConfirmed = previousLine[3]
-    const lastDayConfirmed = confirmed - previousDayConfirmed;
-    const lastDayRecovered = recovered - previousLine[4];
-    const previousDayDeceased = previousLine[5];
-    const lastDayDeceased = deceased - previousDayDeceased;
 
-    let summaryText = `//Generated file at ${new Date()}\n`;
-    summaryText += 'const Summary = {\n';
-    summaryText += 'data : () => {\n';
-    summaryText += 'return {\n';
-    summaryText += `show:${showSummary}\n`;
-    summaryText += `,title:'${title}'\n`;
-    summaryText += ',cases: [\n';
-    summaryText += `{alias:'Pruebas realizadas', reported: '${formatNumber(cases)}', delta:'${formatNumber(lastDayCases)}+'}\n`;
-    summaryText += `,{alias:'Confirmados', reported: '${formatNumber(confirmed)}', delta:'${formatNumber(lastDayConfirmed)}+'}\n`;
-    summaryText += `,{alias:'Recuperados', reported: '${formatNumber(recovered)}', delta:'${formatNumber(lastDayRecovered)}+'}\n`;
-    summaryText += `,{alias:'Fallecidos', reported: '${formatNumber(deceased)}', delta:'${formatNumber(lastDayDeceased)}+'}\n`;
-    summaryText += `,{alias:'Mortalidad', reported: '${(100 * deceased / confirmed).toFixed(2)}%', delta:'${(100 * previousDayDeceased / previousDayConfirmed).toFixed(2)}%'}\n`;
-    summaryText += ']\n';
-    summaryText += ',source: {\n';
-    summaryText += `link: '${link}'\n`;
-    summaryText += `,alias: '${alias}'\n`;
-    summaryText += '}\n';
-    summaryText += '}\n';
-    summaryText += '}\n';
-    summaryText += '}\n';
-    summaryText += 'module.exports = Summary;';
-
-    return summaryText;
-
-}
-
-function generateSummaryFile(summaryCsvFile) {
-    return fs.readFile(path.resolve(__dirname, folderName, summaryCsvFile), 'utf8', (err, file) => {
-        if (err){
-            console.log(err);
-        }
-        else {
-            const lines = file.split('\n');
-            const lastLine = lines[lines.length - 1].split(',');
-            const previousLine = lines[lines.length - 2].split(',');
-        
-            const summaryText = generateSummaryText(lastLine, previousLine);
-            fs.writeFile(path.resolve(__dirname, outputFolderName, 'summary.js'),summaryText, (err) => {
-                if (err)
-                    console.log(err);
-            });
-        }
-    });
-}
 
 function generateLocationsText() {
     //const config = generalConfiguration.data();
@@ -307,7 +251,7 @@ const fileFlag = argv.file;
 switch (fileFlag) {
     case 'summary':
         console.log('🤖Generating summary file...');
-        generateSummaryFile(summaryCsvFile)
+        summaryBuilder.generateSummaryFile(summaryCsvFile)
         console.log('🤖Summary file has been generated 😎');
         break;
 
