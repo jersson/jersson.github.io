@@ -35,6 +35,20 @@ URL: http://localhost:8080/
 ```
 El servicio estará listo para ser consumido en la URL indicada.
 
+**¿Cómo hacer una prueba unitaria del servicio?**<br/>
+-
+Dentro de la carpeta de un servicio (por ejemplo, **service/summary**), puedes ejecutar el comando:
+```
+npm test
+```
+Si todo es correcto, verás lo siguiente:
+```
+✓ covidSummary: service is running!
+1 passing (8ms)
+```
+La prueba unitaria del servicio fue construida usando [Mocha](https://mochajs.org/) y [Sinon](https://sinonjs.org/). El código está en la carpeta **test** ubicada en cada servicio.
+
+
 **¿Cómo desplegar el servicio en Google Cloud?**<br/>
 -
 Dentro de la carpeta del servicio, ejecuta el comando:

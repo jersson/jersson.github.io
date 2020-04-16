@@ -5,11 +5,16 @@
   "main": "index.js",
   "scripts": {
     "local": "functions-framework --target=covidCaseTrends",
+    "test": "mocha",
     "deploy": "./deploy.sh"
   },
   "author": "Jersson Dongo",
   "license": "MIT",
   "devDependencies": {
     "@google-cloud/functions-framework": "^1.5.1"
+  },
+  "dependencies": {
+    "mocha": "^7.1.1",
+    "sinon": "^9.0.2"
   }
 }

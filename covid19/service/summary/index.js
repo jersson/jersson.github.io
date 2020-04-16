@@ -4,5 +4,6 @@ exports.covidSummary = (req, res) =>{
     let origin_allowed = process.env.ORIGIN_ALLOWED || '*';
     
     res.set('Access-Control-Allow-Origin', origin_allowed);
+
     res.send(summary);
 }
