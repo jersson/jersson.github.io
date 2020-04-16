@@ -1,7 +1,7 @@
 # COVID-19 Perú en imágenes
 Este proyecto busca generar conciencia por medio de las gráficas y tendencias que se actualizan diariamente de acuerdo a los reportes del Ministerio de Salud del Perú.
 
-Puedes ver la aplicación wen en este [enlace](https://jersson.github.io/covid19/)
+Puedes ver la aplicación web en este [enlace](https://jersson.github.io/covid19/) y todo el código en este [repositorio](./covid19)
 
 ---
 
