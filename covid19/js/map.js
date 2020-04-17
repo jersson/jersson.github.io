@@ -15,7 +15,7 @@ function initMap() {
 
       result.forEach(location => {
 
-        let factor = 3 * location.confirmed;
+        let factor = 1 * location.confirmed;
         let i = 0;
 
         let image = './images/icons8-coronavirus-16.png';

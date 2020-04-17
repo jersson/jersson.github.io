@@ -23,7 +23,7 @@ class LocationsBuilder extends Builder{
                         item.title = r.title;
                         item.latitude = r.latitude;
                         item.longitude = r.longitude;
-                        item.confirmed = this.formatNumber(r.confirmed[r.confirmed.length - 1]);
+                        item.confirmed = r.confirmed[r.confirmed.length - 1];
                         item.change = change;
                         return item;
                     })
