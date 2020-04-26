@@ -11,23 +11,11 @@ html, body {
 #floating-panel {
   display: flex;
   position: absolute;
-  top: 5px;
-  left: 15%;
+  top: 50px; 
+  left: 5px; 
   z-index: 5;
   text-align: left;
 }
-
-@media screen and (max-width: 780px) {
-  #floating-panel {
-    display: flex;
-    position: absolute;
-    top: 50px;
-    left: 5px;
-    z-index: 5;
-    text-align: left;
-  }
-}
-
 
 .group {
   border: 1px solid #999;
@@ -87,4 +75,8 @@ html, body {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+.hand {
+  cursor: pointer;
 }
