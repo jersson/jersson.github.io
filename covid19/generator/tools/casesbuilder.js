@@ -75,7 +75,16 @@ class CasesBuilder extends Builder{
         treatment.fill = region.cases.treatment.fill;
     
         dataset.push(treatment);
-    
+
+        let specialTreatment = {};
+        specialTreatment.label = region.cases.treatment.special.title;
+        specialTreatment.data = region.cases.treatment.special.data.slice(region.cases.treatment.special.data.length - daysToAnalyse, region.cases.treatment.special.data.length);
+        specialTreatment.borderColor = region.cases.treatment.special.borderColor;
+        specialTreatment.fill = region.cases.treatment.special.fill;
+
+        dataset.push(specialTreatment);
+
+
         let deceased = {};
         deceased.label = region.cases.deceased.title;
         deceased.data = region.cases.deceased.data.slice(region.cases.deceased.data.length - daysToAnalyse, region.cases.deceased.data.length);
