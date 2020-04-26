@@ -89,6 +89,11 @@ node build.js --file cases
 ```
 npm run build -- --file cases
 ```
+(opcional)
+<br/>Si quieres generar todos los archivos:
+```
+node build.js --file all
+```
 3. Si todo es correcto, encontrarás un mensaje como este:
 ```
 🤖Generating cases file...
@@ -103,11 +108,23 @@ node deploy.js --file cases
 ```
 npm run deploy -- --file cases
 ```
+(opcional)
+<br/>Si quieres desplegar todos los archivos:
+```
+node deploy.js --file all
+```
+(opcional)
+<br/>Si quieres desplegar todos los archivos y forzar la generación:
+```
+node deploy.js --file all --generate
+```
 6. Si todo es correcto, encontrarás un mensaje como este:
 ```
 🤖Deploying cases file...
 🤖Cases file has been deployed 😎
 ```
+
+
 7. El archivo estará copiado en la carpeta data del servicio correspondiente. En este caso será la carpeta **service/cases/data**
 
 ## Información de contacto
