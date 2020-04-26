@@ -1,3 +1,5 @@
+//TODO: this code has to be replaced with real code :) 
+// const Regional = require('')
 exports.covidRegionalTrends = (req, res) => {
 let regionalTrends = {
         // labels: ['29-03','30-03', '31-03','01-04','02-04','03-04','04-04'],
