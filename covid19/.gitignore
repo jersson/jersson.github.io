@@ -1,3 +1,7 @@
 .DS_Store
 node_modules
 dist
+./service/cases/data/cases.js
+./service/locations/data/locations.js
+./service/summary/data/summary.js
+./service/topregional/data/topregional.js
