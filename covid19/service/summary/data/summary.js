@@ -1,15 +1,15 @@
-//Generated file at Wed Apr 15 2020 14:58:09 GMT-0500 (-05)
+//Generated file at Sun Apr 26 2020 13:34:44 GMT-0500 (-05)
 const Summary = {
 data : () => {
 return {
 show:true
-,title:'Situación al 15 de abril'
+,title:'Situación al 26 de abril'
 ,cases: [
-{alias:'Pruebas realizadas', reported: '109,385', delta:'7,169+'}
-,{alias:'Confirmados', reported: '11,475', delta:'1,172+'}
-,{alias:'Recuperados', reported: '3,108', delta:'239+'}
-,{alias:'Fallecidos', reported: '254', delta:'24+'}
-,{alias:'Mortalidad', reported: '2.21%', delta:'2.23%'}
+{alias:'Pruebas realizadas', reported: '232,747', delta:'14,552+'}
+,{alias:'Confirmados', reported: '27,517', delta:'2,186+'}
+,{alias:'Recuperados', reported: '8,088', delta:'291+'}
+,{alias:'Fallecidos', reported: '728', delta:'28+'}
+,{alias:'Mortalidad', reported: '2.65%', delta:'2.76%'}
 ]
 ,source: {
 link: 'https://www.gob.pe/coronavirus'
