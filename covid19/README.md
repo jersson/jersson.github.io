@@ -21,6 +21,11 @@ Para el despliegue estoy aprovechando la plataforma de [Google Cloud Functions](
 
 La información utilizada y expuesta por cada servicio, se explicará más adelante.
 
+## **¿Cómo es la interacción Front End / Back End?**
+Este gráfico nos ayudará a entender este concepto.
+![architecture](./assets/images/architecture.png)
+
+
 **¿Cómo ejecutar localmente un servicio?**<br/>
 -
 Dentro de la carpeta de un servicio (por ejemplo, **service/summary**), puedes ejecutar el comando:
