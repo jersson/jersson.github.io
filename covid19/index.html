@@ -14,8 +14,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COVID-19 Perú en imágenes</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="./images/coronavirus.png">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/coronavirus.png">
+    <!-- favicon made by https://www.flaticon.com/authors/vitaly-gorbachev -->
   </head>
   <body>
     <div id="floating-panel"></div>
@@ -36,18 +37,18 @@
       <button class="tablinks" onclick="openTab(event, 'chart2')" title="Diagnósticos"><i class="fas fa-head-side-mask fa-2x"></i></button>
       <button class="tablinks" onclick="openGitHub()" title="Más sobre este proyecto"><i class="fab fa-github fa-2x"></i></button>
     </div>
-    <script src="./js/summary.js"></script>
+    <script src="./assets/js/summary.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="./js/topRegionalTrends.js"></script>
-    <script src="./js/caseTrends.js"></script>
+    <script src="./assets/js/topRegionalTrends.js"></script>
+    <script src="./assets/js/caseTrends.js"></script>
     <script>
       renderSummary();
       renderTopRegionalTrends('lineChart1');
       renderCaseTrends('lineChart2');
     </script>
-    <script src="./js/map.js"></script>
+    <script src="./assets/js/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAI_O3E19Z-dpWfXWIHXao6YYaYG9GmFJM&libraries=visualization&callback=initMap"></script>
-    <script src="./js/tools.js"></script>
+    <script src="./assets/js/tools.js"></script>
     <script src="https://kit.fontawesome.com/409d32f46b.js" crossorigin="anonymous"></script>
 </body>
 </html>

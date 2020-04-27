@@ -9,19 +9,19 @@ Puedes ver la aplicación web en este [enlace](https://jersson.github.io/covid19
 ## Mapa de calor 
 El mapa muestra los casos reportados por región incluyendo la variación de casos al día anterior.
 
-![heatmap](./covid19/images/heatmap.png)
+![heatmap](./covid19/assets/images/heatmap.png)
 
 ## Top 5 regional de casos confirmados
 El gráfico muestra la tendencia de los últimos 7 días. Además incluye la tendencia en el país y soporta filtros por cada zona geográfica.
 
-![trends](./covid19/images/trends-01.png)
+![trends](./covid19/assets/images/trends-01.png)
 
-![trends](./covid19/images/trends-02.png)
+![trends](./covid19/assets/images/trends-02.png)
 
 ## Evaluaciones y resultados
 El gráfico muestra la relación y tendencia de evaluaciones, casos confirmados, casos descartados y fallecimientos.  
 
-![trends](./covid19/images/trends-03.png)
+![trends](./covid19/assets/images/trends-03.png)
 
 # Arquitectura
 ## Front End

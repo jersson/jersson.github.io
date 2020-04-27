@@ -18,7 +18,7 @@ function initMap() {
         let factor = 1 * location.confirmed;
         let i = 0;
 
-        let image = './images/icons8-coronavirus-16.png';
+        let image = './assets/images/icons8-coronavirus-16.png';
 
         while (i < factor) {
           locations.push(new google.maps.LatLng(location.latitude, location.longitude));
