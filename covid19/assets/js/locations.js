@@ -1,4 +1,4 @@
-function initMap() {
+function renderMap() {
   const maxI = 50, rad = 24, opac = .6;
   const url = 'https://us-central1-virtual-bonito-170805.cloudfunctions.net/covidLocations';
   document.getElementById('map').style.display = 'block';
