@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "local": "functions-framework --target=covidSummary",
+    "local": "functions-framework --target=covidSummary --port=8080",
     "test" : "mocha",
     "deploy": "./deploy.sh"
   },
