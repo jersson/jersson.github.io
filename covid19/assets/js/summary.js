@@ -23,6 +23,7 @@ function renderSummary() {
                 displayPanel = 'flex'
 
                 let htmlSummary = '<div class="group">';
+                htmlSummary += `<div class="subject-2>Muchas gracias por su visita, ya no estoy actualizando este sitio web. Por favor, cuídense, piensen en sus familiares y amigos.</div>`;
                 htmlSummary += `<div class="subject-2 info hand" onclick="displaySummaryDetails('summary-details','display-icon');"><i id="display-icon" class="fas fa-minus-circle"></i> ${result.title}</div>`;
                 
                 htmlSummary += '<div id="summary-details" style="display:block;">';
