@@ -14,7 +14,7 @@
     "@google-cloud/functions-framework": "^1.5.1"
   },
   "dependencies": {
-    "mocha": "^7.1.1",
+    "mocha": "^10.2.0",
     "sinon": "^9.0.2"
   }
 }
